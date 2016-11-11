@@ -1,17 +1,16 @@
 import React from 'react';
+import Asset from './components/Asset'
 import './App.css';
 
   const App = ({ assets, dispatch }) => (
   <div>
-    { assets.map(function (asset) {
-      return <img
+    { assets.map( asset => (
+      <Asset
         key={ asset.id }
-        src={ asset.thumbnail }
-        alt={ asset.caption }
-        width='100'
-        height='100'
+        thumbnail={ asset.thumbnail }
+        caption={ asset.caption }
       />
-    })}
+    ))}
   </div>
 )
 
