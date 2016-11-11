@@ -14,7 +14,7 @@ const reducer = (state, action) => {
   }
 }
 
-const store = configureStore()
+const store = configureStore(reducer)
 
 function render (assets) {
   ReactDOM.render(
@@ -22,3 +22,6 @@ function render (assets) {
     document.getElementById('root')
   );
 }
+
+store.subscribe(render)
+render()
