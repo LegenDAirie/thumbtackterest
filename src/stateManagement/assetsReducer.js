@@ -1,4 +1,4 @@
-const assetsReducer = (state, action) => {
+const assetsReducer = (state = [], action) => {
   switch (action.type) {
     case 'RECEIVE_ASSETS':
 
