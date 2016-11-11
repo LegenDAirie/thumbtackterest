@@ -2,20 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import configureStore from './configureStore'
+// import configureStore from './configureStore'
 import axios from 'axios'
 import { createStore } from 'redux'
 import assetsReducer from './stateManagement/assetsReducer'
+
+const initialState = []
+
+const store = createStore(assetsReducer, initialState)
 
 function parseData(data) {
   const assets = data.data.data
 
   store.dispatch({ type: 'RECEIVE_ASSETS', assets })
 }
-
-const initialState = []
-
-const store = createStore(assetsReducer, initialState)
 
 axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets')
 .then(function (response) {
@@ -27,7 +27,9 @@ axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets')
 
 function render () {
   ReactDOM.render(
-    <App assets={ store.getState() }/>,
+    <App assets={ store.getState() }
+      dispatch={ store.dispatch }
+    />,
     document.getElementById('root')
   );
 }
