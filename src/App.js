@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 
-// return <li key={ asset.id }><img alt={ asset.caption } src={ asset.url }></img></li>
-
   const App = ({ assets, dispatch }) => (
   <div>
     { assets.map(function (asset) {

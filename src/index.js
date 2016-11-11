@@ -13,11 +13,12 @@ const store = createStore(assetsReducer, initialState)
 
 function parseData(data) {
   const assets = data.data.data
+  console.log(assets)
 
   store.dispatch({ type: 'RECEIVE_ASSETS', assets })
 }
 
-axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets')
+axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page=20')
 .then(function (response) {
   parseData(response)
 })
