@@ -10,6 +10,16 @@ function configureStore () {
     console.log(error)
   })
 
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case 'RECEIVE_ASSETS':
+
+        return state
+      default:
+        return state
+    }
+  }
+
   function parseData(data) {
     const assets = data.data.data
     console.log(assets)
