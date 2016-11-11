@@ -5,6 +5,7 @@ import './index.css';
 import configureStore from './configureStore'
 import axios from 'axios'
 import { createStore } from 'redux'
+import assetsReducer from './stateManagement/assetsReducer'
 
 function parseData(data) {
   const assets = data.data.data
@@ -12,19 +13,9 @@ function parseData(data) {
   render(assets)
 }
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'RECEIVE_ASSETS':
-
-      return state
-    default:
-      return state
-  }
-}
-
 const initialState = []
 
-const store = createStore(reducer, initialState)
+const store = createStore(assetsReducer, initialState)
 
 axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets')
 .then(function (response) {
