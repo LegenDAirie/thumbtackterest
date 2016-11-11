@@ -18,7 +18,7 @@ const store = configureStore(reducer)
 
 function render (assets) {
   ReactDOM.render(
-    <App assets={ assets }/>,
+    <App assets={ store.getState() }/>,
     document.getElementById('root')
   );
 }
