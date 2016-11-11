@@ -9,8 +9,8 @@ import assetsReducer from './stateManagement/assetsReducer'
 
 function parseData(data) {
   const assets = data.data.data
-  console.log(assets)
-  render(assets)
+
+  store.dispatch({ type: 'RECEIVE_ASSETS', assets })
 }
 
 const initialState = []
@@ -25,7 +25,7 @@ axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets')
   console.log(error)
 })
 
-function render (assets) {
+function render () {
   ReactDOM.render(
     <App assets={ store.getState() }/>,
     document.getElementById('root')
