@@ -7,8 +7,7 @@ import './App.css';
     { assets.map( asset => (
       <Asset
         key={ asset.id }
-        thumbnail={ asset.thumbnail }
-        caption={ asset.caption }
+        { ...asset }
       />
     ))}
   </div>
