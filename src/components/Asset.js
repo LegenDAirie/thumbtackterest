@@ -1,4 +1,5 @@
 import React from 'react'
+import Tags from './Tags'
 
 const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
   return (
@@ -8,13 +9,8 @@ const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
         alt={ caption }
       />
       from { user.username }
-      <div className='tag-container'>
-        <div className='tags'>
-          { tags.map(function (tag) {
-            return <li key={ tag }>{ tag }</li>
-          })}
-        </div>
-      </div>
+      
+      <Tags tags={ tags } />
 
       <div className='caption-container'>
         <div className='caption'>
