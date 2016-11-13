@@ -22,7 +22,7 @@ const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
         </div>
       </div>
 
-      <div>
+      <div className='hearts'>
         ❤️ { hearts }
       </div>
     </div>

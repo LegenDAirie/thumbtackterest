@@ -23,6 +23,10 @@
   to { transform: rotate(360deg); }
 }*/
 
+body {
+  background: #EEE;
+}
+
 li {
   list-style: none;
   display: inline;
@@ -53,14 +57,28 @@ ul {
   height: 100px;
 }
 
+.hearts {
+  text-align: center;
+}
 
 .grid {
+  max-width: 1200px;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 .grid-item {
   width: 200px;
- border-radius: 8px;
- background: #F4F4F4;
+  border-radius: 8px;
+  background: white;
+  float: left;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+  margin: 10px;
+
 }
 
 img {

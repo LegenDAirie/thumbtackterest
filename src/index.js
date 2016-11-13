@@ -17,7 +17,7 @@ function parseData(data) {
   store.dispatch({ type: 'RECEIVE_ASSETS', assets })
 }
 
-axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page=1')
+axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page=10')
 .then(function (response) {
   parseData(response)
 })
