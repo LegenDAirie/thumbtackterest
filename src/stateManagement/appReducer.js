@@ -1,7 +1,7 @@
 const appReducer = (state = {}, action) => {
   switch (action.type) {
-    case idk:
-      return stuff
+    case 'stuff':
+      return state
 
     default:
       return state
