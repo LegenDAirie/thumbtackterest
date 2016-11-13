@@ -3,7 +3,7 @@ import Asset from './components/Asset'
 import './App.css';
 
   const App = ({ assets, dispatch }) => (
-  <div>
+  <div className='grid'>
     { assets.map( asset => (
       <Asset
         key={ asset.id }

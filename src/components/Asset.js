@@ -3,7 +3,7 @@ import React from 'react'
 const Asset = ({ thumbnail, caption, user, tags, hearts }) => {
   console.log(thumbnail)
   return (
-    <div>
+    <div className='grid-item' >
       <img
         src={ thumbnail }
         alt={ caption }
