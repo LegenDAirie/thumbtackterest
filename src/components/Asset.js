@@ -1,5 +1,6 @@
 import React from 'react'
 import Tags from './Tags'
+import Caption from './Caption'
 
 const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
   return (
@@ -9,14 +10,10 @@ const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
         alt={ caption }
       />
       from { user.username }
-      
+
       <Tags tags={ tags } />
 
-      <div className='caption-container'>
-        <div className='caption'>
-          { caption }
-        </div>
-      </div>
+      <Caption caption={ caption }/>
 
       <div className='hearts'>
         ❤️ { hearts }
