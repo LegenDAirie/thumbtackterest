@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Image = ({ shortcut, album, caption }) => {
+const Image = ({ shortcut, album, caption, maxWidth, cssClass }) => {
   return (
-    <img className='asset-image'
-      src={ `https://media.getchute.com/m/${shortcut}/c/${album}/w/200` }
+    <img className={ cssClass }
+      src={ `https://media.getchute.com/m/${shortcut}/c/${album}/w/${maxWidth}` }
       alt={ caption }
     />
   )
