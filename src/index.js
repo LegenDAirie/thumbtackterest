@@ -35,3 +35,19 @@ function render () {
 
 store.subscribe(render)
 render()
+
+
+
+
+
+// state = { // state object
+//   assets = { // object container all assets
+//     assetsIDs: [ // list of assetIDs
+//
+//     ],
+//     assets: { // hashing assets by thier IDs
+//       id: asset
+//     }
+//   },
+//   currentLightBoxImage: assetID  // Light box image id
+// }
