@@ -12,6 +12,7 @@ const store = createStore(assetsReducer, initialState)
 
 function parseData(data) {
   const assets = data.data.data
+  console.log(data)
   console.log(assets)
 
   store.dispatch({ type: 'RECEIVE_ASSETS', assets })

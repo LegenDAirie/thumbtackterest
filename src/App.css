@@ -23,9 +23,6 @@
   to { transform: rotate(360deg); }
 }*/
 
-body {
-  background: #EEE;
-}
 
 li {
   list-style: none;
@@ -39,6 +36,14 @@ li {
 ul {
   margin: 0;
   padding: 0;
+}
+
+.header {
+  font-size: 3em;
+  font-weight: bold;
+  color: #555;
+  margin: 20px 0px 20px 50px;
+
 }
 
 .tag-container {
@@ -62,7 +67,7 @@ ul {
 }
 
 .grid {
-  max-width: 1200px;
+  background: #EEE;
 }
 
 .grid:after {
