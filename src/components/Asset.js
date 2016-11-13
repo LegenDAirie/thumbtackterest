@@ -1,18 +1,11 @@
 import React from 'react'
 
-const Asset = ({ thumbnail, caption, user, tags, hearts }) => {
-  console.log(thumbnail)
+const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
   return (
     <div className='grid-item' >
       <img
-        src={ thumbnail }
+        src={ `https://media.getchute.com/m/${shortcut}/c/${album_id}/w/200` }
         alt={ caption }
-        width='100'
-        height='100'
-      />
-      <img
-        src={ user.avatar }
-        alt="users avatar image"
       />
       from { user.username }
       <ul>
@@ -22,10 +15,6 @@ const Asset = ({ thumbnail, caption, user, tags, hearts }) => {
       </ul>
       { caption }
       ❤️ { hearts }
-      <img
-        src={ user.avatar }
-        alt="users avatar image"
-      />
       { user.name }
     </div>
   )
