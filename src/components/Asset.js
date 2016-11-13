@@ -8,7 +8,6 @@ const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
     <div className='grid-item' >
 
       <Image shortcut={ shortcut } album={ album_id } alt={ caption } />
-      from { user.username }
       <Tags tags={ tags } />
       <Caption caption={ caption }/>
 
