@@ -24,6 +24,7 @@ ul {
   opacity: 0.5;
 }
 
+
 .light-box-image-container {
   position: fixed;
   top: 0;
@@ -35,8 +36,9 @@ ul {
 
 .light-box {
   display: flex;
+  height: 100%;
   justify-content: center;
-  /*box-shadow: 0 0 3.125em rgba( 0, 0, 0, .75 );*/
+  align-items: center;
 }
 
 .asset-image {
