@@ -8,14 +8,23 @@ const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
         alt={ caption }
       />
       from { user.username }
-      <ul>
-        { tags.map(function (tag) {
-          return <li key={ tag }>{ tag }</li>
-        })}
-      </ul>
-      { caption }
-      ❤️ { hearts }
-      { user.name }
+      <div className='tag-container'>
+        <div className='tags'>
+          { tags.map(function (tag) {
+            return <li key={ tag }>{ tag }</li>
+          })}
+        </div>
+      </div>
+
+      <div className='caption-container'>
+        <div className='caption'>
+          { caption }
+        </div>
+      </div>
+
+      <div>
+        ❤️ { hearts }
+      </div>
     </div>
   )
 }
