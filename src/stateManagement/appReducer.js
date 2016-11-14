@@ -4,7 +4,7 @@ import { combineReducers } from 'redux'
 
 const appReducer = combineReducers({
   assets: assetsReducer,
-  currentLightBoxImage: lightBoxReducer
+  currentLightBoxImageID: lightBoxReducer
 })
 
 export default appReducer
