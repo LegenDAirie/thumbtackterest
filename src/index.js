@@ -1,14 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import './index.css'
 import axios from 'axios'
 import { createStore } from 'redux'
-import assetsReducer from './stateManagement/assetsReducer'
+import appReducer from './stateManagement/appReducer'
 
-const initialState = []
-
-const store = createStore(assetsReducer, initialState)
+const store = createStore(appReducer)
 
 function parseData(data) {
   const assets = data.data.data
