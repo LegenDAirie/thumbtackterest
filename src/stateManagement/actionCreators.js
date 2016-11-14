@@ -16,6 +16,6 @@ export const getAssets = (dispatch) => {
     dispatch(receiveAssets(response.data.data))
   })
   .catch(function (error) {
-    console.log('cats', error)
+    console.log(error)
   })
 }

@@ -22,7 +22,6 @@ const initialState = {
 const assetsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'RECEIVE_ASSETS':
-    console.log()
       return Object.assign({}, state, {
         assetIDs: combineAssetIDs(state.assetIDs, action.assets),
         assets: hashNewAssets(state.assets, action.assets)

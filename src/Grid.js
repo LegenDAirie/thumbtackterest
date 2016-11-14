@@ -14,7 +14,6 @@ const Grid = ({ assetIDs, assets }) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   const { assetIDs, assets } = state.assets
   return {
     assetIDs,
