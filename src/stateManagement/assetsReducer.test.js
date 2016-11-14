@@ -1,12 +1,27 @@
 import assetsReducer from './assetsReducer'
 import deepFreeze from 'deep-freeze'
 
+const initialState = {
+  assetIDs: [],
+  assets: {}
+}
+
+const exampleState = {
+  assetIDs: ['one', 'two', 'three'],
+  assets: {
+    one: { id: 'one' },
+    two: { id: 'two' },
+    three: { id: 'three' }
+  }
+}
+deepFreeze(exampleState)
+
 describe('assets Reducer', () => {
 
-  it('returns state when action is invalid', () => {
-    const stateBefore = [1, 2, 3]
+  it('returns current state when action is invalid', () => {
+    const stateBefore = exampleState
     const action = {}
-    const stateAfter = [1, 2, 3]
+    const stateAfter = exampleState
 
     expect(
       assetsReducer(stateBefore, action)
@@ -16,26 +31,36 @@ describe('assets Reducer', () => {
   it('returns default state when state is undefined', () => {
     const stateBefore = undefined
     const action = {}
-    const stateAfter = []
+    const stateAfter = initialState
 
     expect(
       assetsReducer(stateBefore, action)
     ).toEqual(stateAfter)
   })
 
-  it('does not mutate the state', () => {
-    const stateBefore = [1, 2, 3]
+  it('adds new assets', () => {
+    const stateBefore = exampleState
     const action = {
       type: 'RECEIVE_ASSETS',
-      assets: [4, 5, 6]
+      assets: [{ id: 'four' }, { id: 'five' }]
     }
-    const stateAfter = [1, 2, 3, 4, 5, 6]
+    const stateAfter = {
+      assetIDs: ['one', 'two', 'three', 'four', 'five'],
+      assets: {
+        one: { id: 'one' },
+        two: { id: 'two' },
+        three: { id: 'three' },
+        four: { id: 'four' },
+        five: { id: 'five' }
+      }
+    }
 
-    deepFreeze(stateBefore)
     deepFreeze(action)
 
     expect(
       assetsReducer(stateBefore, action)
     ).toEqual(stateAfter)
   })
+
+  it('does not mutate previous state', () => {} )
 })
