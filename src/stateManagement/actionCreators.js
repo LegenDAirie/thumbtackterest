@@ -10,9 +10,11 @@ const receiveAssets = (assets) => ({
   assets
 })
 
-export const getAssets = (dispatch) => {
-  axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page=10')
+export const getAssets = (dispatch, url) => {
+  url = url || 'http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page=10'
+  axios.get(url)
   .then(function (response) {
+    console.log(response)
     dispatch(receiveAssets(response.data.data))
   })
   .catch(function (error) {
