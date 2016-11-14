@@ -26,7 +26,7 @@ axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page
 
 function render () {
   ReactDOM.render(
-    <App assets={ store.getState() } />,
+    <App state={ store.getState() } />,
     document.getElementById('root')
   );
 }
