@@ -10,8 +10,9 @@ const receiveAssets = (assets) => ({
   assets
 })
 
-export const getAssets = (dispatch, url) => {
-  url = url || 'http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page=10'
+export const getAssets = (dispatch, lastAssetID) => {
+  const nextPage = lastAssetID ? `&max_id=${lastAssetID}` : ''
+  const url = `http://api.getchute.com/v2/albums/aus6kwrg/assets?per_page=10&type=image` + nextPage
   axios.get(url)
   .then(function (response) {
     console.log(response)
