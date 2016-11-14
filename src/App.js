@@ -4,12 +4,14 @@ import Header from './Header'
 import LightBox from './LightBox'
 import './App.css';
 
-const App = ({ assets, currentLightBoxImageID }) => {
+const App = ({ state }) => {
+  const { assets, currentLightBoxImageID } = state
+  console.log(assets)
   return (
     <div>
       <Header/>
       <LightBox { ...assets[currentLightBoxImageID] } />
-      <Grid assets={ assets }/>
+      <Grid assetIDs={ assets.assetIDs } assets={ assets.assets } />
     </div>
   )
 }
