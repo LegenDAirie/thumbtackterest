@@ -4,14 +4,13 @@ import App from './App'
 import './index.css'
 import axios from 'axios'
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import appReducer from './stateManagement/appReducer'
 
 const store = createStore(appReducer)
 
 function parseData(data) {
   const assets = data.data.data
-  console.log(data)
-  console.log(assets)
 
   store.dispatch({ type: 'RECEIVE_ASSETS', assets })
 }
@@ -21,31 +20,12 @@ axios.get('http://api.getchute.com/v2/albums/aus6kwrg/assets?type=image&per_page
   parseData(response)
 })
 .catch(function (error) {
-  console.log(error)
+  console.log('cats', error)
 })
 
-function render () {
-  ReactDOM.render(
-    <App state={ store.getState() } />,
-    document.getElementById('root')
-  );
-}
-
-store.subscribe(render)
-render()
-
-
-
-
-
-// state = { // state object
-//   assets = { // object container all assets
-//     assetsIDs: [ // list of assetIDs
-//
-//     ],
-//     assets: { // hashing assets by thier IDs
-//       id: asset
-//     }
-//   },
-//   currentLightBoxImage: assetID  // Light box image id
-// }
+ReactDOM.render(
+  <Provider store={ store }>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
