@@ -11,7 +11,6 @@ const Grid = ({ assetIDs, assets, dispatch }) => (
     hasMore={ true }
     loadMore={ () => {
       const lastAssetID = assetIDs[assetIDs.length - 1]
-      // var url = `http://api.getchute.com/v2/albums/aus6kwrg/assets?max_id=${lastAssetID}&per_page=10&type=image`
       getAssets(dispatch, lastAssetID)
     }}
   >
