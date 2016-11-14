@@ -10,9 +10,9 @@ const Grid = ({ assetIDs, assets, dispatch }) => (
     pageStart={ 0 }
     hasMore={ true }
     loadMore={ () => {
-      var lastAssetID = assetIDs[assetIDs.length - 1]
-      var url = `http://api.getchute.com/v2/albums/aus6kwrg/assets?max_id=${lastAssetID}&per_page=10&type=image`
-      getAssets(dispatch, url)
+      const lastAssetID = assetIDs[assetIDs.length - 1]
+      // var url = `http://api.getchute.com/v2/albums/aus6kwrg/assets?max_id=${lastAssetID}&per_page=10&type=image`
+      getAssets(dispatch, lastAssetID)
     }}
   >
     { assetIDs.map( assetID =>
