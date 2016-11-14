@@ -1,5 +1,6 @@
 import React from 'react'
 import Asset from './components/Asset'
+import { connect } from 'react-redux'
 
 const Grid = ({ assetIDs, assets }) => {
 
@@ -12,4 +13,13 @@ const Grid = ({ assetIDs, assets }) => {
   )
 }
 
-export default Grid
+const mapStateToProps = (state) => {
+  console.log(state)
+  const { assetIDs, assets } = state.assets
+  return {
+    assetIDs,
+    assets
+  }
+}
+
+export default connect(mapStateToProps)(Grid)

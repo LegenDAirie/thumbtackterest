@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './components/Image'
+import { connect } from 'react-redux'
 
 const LightBox = ({ shouldRender, shortcut, album_id, caption, dimensions }) => {
 
@@ -19,4 +20,16 @@ const LightBox = ({ shouldRender, shortcut, album_id, caption, dimensions }) => 
   )
 }
 
-export default LightBox
+const mapStateToProps = (state) => {
+  const { assets, currentLightBoxImageID } = state
+  const { shortcut, album_id, caption, dimensions } = assets.assets[currentLightBoxImageID] || assets.assets
+  return {
+    currentLightBoxImageID,
+    shortcut,
+    album_id,
+    caption,
+    dimensions
+  }
+}
+
+export default connect(mapStateToProps)(LightBox)
