@@ -6,11 +6,12 @@ import './App.css';
 
 const App = ({ state }) => {
   const { assets, currentLightBoxImageID } = state
-  console.log(assets)
   return (
     <div>
       <Header/>
-      <LightBox { ...assets[currentLightBoxImageID] } />
+      <LightBox shouldRender={ currentLightBoxImageID }
+        { ...assets[currentLightBoxImageID] }
+      />
       <Grid assetIDs={ assets.assetIDs } assets={ assets.assets } />
     </div>
   )
