@@ -2,16 +2,16 @@ import React from 'react'
 import Image from './components/Image'
 import { connect } from 'react-redux'
 
-const LightBox = ({ shouldRender, shortcut, album_id, caption, dimensions }) => {
+const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensions }) => {
 
-  if (!shouldRender) {
+  if (!currentLightBoxImageID) {
     return <span/>
   }
 
   return (
     <div>
       <div className='light-box-shadow'></div>
-        <div className='light-box-image-container'>
+      <div className='light-box-image-container'>
         <div className='light-box'>
           <Image shortcut={ shortcut } album={ album_id } alt={ caption } maxWidth={ 640 }/>
         </div>
