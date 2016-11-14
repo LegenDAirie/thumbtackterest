@@ -1,11 +1,10 @@
-const appReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'stuff':
-      return state
+import lightBoxReducer from './lightBoxReducer'
+import assetsReducer from './assetsReducer'
+import { combineReducers } from 'redux'
 
-    default:
-      return state
-  }
-}
+const appReducer = combineReducers({
+  assets: assetsReducer,
+  currentLightBoxImage: lightBoxReducer
+})
 
 export default appReducer
