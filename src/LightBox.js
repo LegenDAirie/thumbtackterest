@@ -16,7 +16,7 @@ const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensi
         onClick={ () => { dispatch(setLightBoxAsset(null)) }}
         >
         <div className='light-box'>
-          <Image shortcut={ shortcut } album={ album_id } alt={ caption } maxWidth={ 640 }/>
+          <Image shortcut={ shortcut } album={ album_id } alt={ caption } maxWidth={ dimensions.width }/>
         </div>
       </div>
     </div>
