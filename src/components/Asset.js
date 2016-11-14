@@ -3,13 +3,15 @@ import Tags from './Tags'
 import Caption from './Caption'
 import Image from './Image'
 
-const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
+const Asset = ({ caption, user, tags, hearts, shortcut, album_id, id }) => {
   return (
     <div className='grid-item' >
 
       <Image shortcut={ shortcut } album={ album_id } alt={ caption }
         maxWidth={ 200 }
         cssClass={ 'asset-image' }
+        id={ id }
+
        />
       <Tags tags={ tags } />
       <Caption caption={ caption }/>

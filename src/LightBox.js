@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from './components/Image'
 import { connect } from 'react-redux'
+import { setLightBoxAsset } from './stateManagement/actionCreators'
 
-const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensions }) => {
+const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensions, dispatch }) => {
 
   if (!currentLightBoxImageID) {
     return <span/>
@@ -10,8 +11,10 @@ const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensi
 
   return (
     <div>
-      <div className='light-box-shadow'></div>
-      <div className='light-box-image-container'>
+      <div className='light-box-shadow'/>
+      <div className='light-box-image-container'
+        onClick={ () => { dispatch(setLightBoxAsset(null)) }}
+        >
         <div className='light-box'>
           <Image shortcut={ shortcut } album={ album_id } alt={ caption } maxWidth={ 640 }/>
         </div>
