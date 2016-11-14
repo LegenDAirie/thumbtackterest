@@ -4,12 +4,11 @@ import Header from './Header'
 import LightBox from './LightBox'
 import './App.css';
 
-const App = ({ assets }) => {
-  console.log(assets[0])
+const App = ({ assets, currentLightBoxImage }) => {
   return (
     <div>
       <Header/>
-      <LightBox { ...assets[0] } />
+      <LightBox { currentLightBoxImage } />
       <Grid assets={ assets }/>
     </div>
   )
