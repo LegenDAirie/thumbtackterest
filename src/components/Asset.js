@@ -7,7 +7,8 @@ const Asset = ({ caption, user, tags, hearts, shortcut, album_id }) => {
   return (
     <div className='grid-item' >
 
-      <Image shortcut={ shortcut } album={ album_id } alt={ caption } maxWidth={ 200 }
+      <Image shortcut={ shortcut } album={ album_id } alt={ caption }
+        maxWidth={ 200 }
         cssClass={ 'asset-image' }
        />
       <Tags tags={ tags } />
