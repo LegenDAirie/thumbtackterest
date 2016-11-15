@@ -13,6 +13,7 @@ A Pinterest-style wall for displaying images using the Chute api
 - React for views
 - Redux for state management
 - React-create-app's Jest for testing
+- masonry-layout for layout
 
 ## Install
 
@@ -22,7 +23,7 @@ A Pinterest-style wall for displaying images using the Chute api
 ## Run
 
 3. npm start
-4. open http://localhost:3000/ in a browser
+4. go to [localhost](http://localhost:3000/) in a browser
 
 ## test
 
