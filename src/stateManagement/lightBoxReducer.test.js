@@ -4,9 +4,9 @@ import deepFreeze from 'deep-freeze'
 describe('lightBoxReducer', () => {
 
   it('returns state when action is invalid', () => {
-    const stateBefore = false
+    const stateBefore = null
     const action = {}
-    const stateAfter = false
+    const stateAfter = null
 
     expect(
       lightBoxReducer(stateBefore, action)
@@ -16,7 +16,7 @@ describe('lightBoxReducer', () => {
   it('returns default state when state is undefined', () => {
     const stateBefore = undefined
     const action = {}
-    const stateAfter = false
+    const stateAfter = null
 
     expect(
       lightBoxReducer(stateBefore, action)
@@ -24,7 +24,7 @@ describe('lightBoxReducer', () => {
   })
 
   it('updates the currentLightBoxImageID with asset ID', () => {
-    const stateBefore = false
+    const stateBefore = null
     const action = {
       type: 'SET_LIGHT_BOX_ASSET',
       assetID: 12345
@@ -38,13 +38,13 @@ describe('lightBoxReducer', () => {
     ).toEqual(stateAfter)
   })
 
-  it('sets currentLightBoxImageID to false when asset ID is undefined', () => {
-    const stateBefore = false
+  it('sets currentLightBoxImageID to null when asset ID is undefined', () => {
+    const stateBefore = null
     const action = {
       type: 'SET_LIGHT_BOX_ASSET',
       assetID: undefined
     }
-    const stateAfter = false
+    const stateAfter = null
 
     deepFreeze(action)
 
