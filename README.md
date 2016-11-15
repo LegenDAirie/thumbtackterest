@@ -1,6 +1,7 @@
 ## Thumbtackterest
 
 A Pinterest-style wall for displaying images using the Chute api
+[check it out](http://thumbtackterest.surge.sh/)
 
 ## Features
 
