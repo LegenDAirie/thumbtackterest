@@ -3,7 +3,7 @@ import Image from './components/Image'
 import { connect } from 'react-redux'
 import { setLightBoxAsset } from './stateManagement/actionCreators'
 
-const LightBox = ({currentLightBoxImageID, shortcut, album_id, caption, dimensions, dispatch }) => {
+const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensions, dispatch }) => {
 
   if (!currentLightBoxImageID) return <span/>
 
