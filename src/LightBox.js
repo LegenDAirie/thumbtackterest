@@ -3,11 +3,9 @@ import Image from './components/Image'
 import { connect } from 'react-redux'
 import { setLightBoxAsset } from './stateManagement/actionCreators'
 
-const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensions, dispatch }) => {
+const LightBox = ({currentLightBoxImageID, shortcut, album_id, caption, dimensions, dispatch }) => {
 
-  if (!currentLightBoxImageID) {
-    return <span/>
-  }
+  if (!currentLightBoxImageID) return <span/>
 
   return (
     <div>
@@ -16,7 +14,11 @@ const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensi
         onClick={ () => { dispatch(setLightBoxAsset(null)) }}
         >
         <div className='light-box'>
-          <Image shortcut={ shortcut } album={ album_id } alt={ caption } maxWidth={ dimensions.width }/>
+          <Image shortcut={ shortcut }
+            album={ album_id }
+            alt={ caption }
+            maxWidth={ dimensions.width }
+          />
         </div>
       </div>
     </div>
@@ -25,7 +27,13 @@ const LightBox = ({ currentLightBoxImageID, shortcut, album_id, caption, dimensi
 
 const mapStateToProps = (state) => {
   const { assets, currentLightBoxImageID } = state
-  const { shortcut, album_id, caption, dimensions } = assets.assets[currentLightBoxImageID] || assets.assets
+  const {
+    shortcut,
+    album_id,
+    caption,
+    dimensions
+  } = assets.assets[currentLightBoxImageID] || assets.assets
+
   return {
     currentLightBoxImageID,
     shortcut,
